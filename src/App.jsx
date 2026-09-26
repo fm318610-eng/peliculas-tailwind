@@ -1,7 +1,15 @@
+import FormMovie from "./components/FormMovie";
+import Header from "./components/Header";
+
 function App() {
   return (
-   <h1>hola mundo</h1>
-  )
+    <>
+      <Header></Header>
+      <main className="container mx-auto my-4">
+        <FormMovie></FormMovie>
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;
