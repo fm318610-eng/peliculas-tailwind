@@ -1,3 +1,4 @@
+import { useState } from "react";
 import GridMovie from "./GridMovie";
 import { useForm } from "react-hook-form";
 
@@ -8,14 +9,22 @@ const FormMovie = () => {
     formState: { errors },
   } = useForm();
 
-  const crearPelicula = (data) => {
-    console.log(data);
+  const [peliculas,setPeliculas] = useState([])
+
+  const crearPelicula = (data, e) => {
+    const nuevaPelicula ={
+        ...data,
+        id: crypto.randomUUID()
+    }
+    console.log(nuevaPelicula)
+    setPeliculas([...peliculas, nuevaPelicula])
+    e.target.reset()
   };
 
   return (
     <section>
       <form
-        onSubmit={handleSubmit(crearPelicula)}
+        onSubmit={handleSubmit((data, e)=> crearPelicula(data, e))}
         className="border border-slate-700 p-8
     rounded-lg bg-slate-800 transition-colors"
       >
@@ -106,7 +115,7 @@ const FormMovie = () => {
           Enviar Pelicula
         </button>
       </form>
-      <GridMovie></GridMovie>
+      <GridMovie peliculas={peliculas}></GridMovie>
     </section>
   );
 };

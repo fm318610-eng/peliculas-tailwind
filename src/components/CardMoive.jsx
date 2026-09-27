@@ -1,6 +1,6 @@
 
 
-const CardMoive = () =>{
+const CardMoive = ({pelicula}) =>{
     return(
         <div className="flex flex-col h-full border border-slate-300
         dark:border-slate-700 rounded-lg p-5 bg-slate-800 dark:bg-slate-600 text-white
@@ -9,16 +9,16 @@ const CardMoive = () =>{
             <div className="grow">
                 <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white
                 uppercase">
-                    nombre de pelicula
+                    {pelicula.pelicula}
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 mb-4 text-md
                 leading-relaxed wrap-break-word">
-                    descripcion
+                    {pelicula.detalle}
 
                 </p>
                 <p className="text-xs font-semibold text-blue-600 dark:text-blue-400
                 uppercase tracking-wider mb-4">
-                    Categoria:
+                    Categoria: {pelicula.categoria}
                 </p>
             </div>
             {/* Boton Eliminar siempre al final */}
