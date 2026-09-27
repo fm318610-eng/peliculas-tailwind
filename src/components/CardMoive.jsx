@@ -16,7 +16,7 @@ const CardMoive = () =>{
                     descripcion
 
                 </p>
-                <p className="text-xs font-semibold text-blue-600 dark:text-nlue-400
+                <p className="text-xs font-semibold text-blue-600 dark:text-blue-400
                 uppercase tracking-wider mb-4">
                     Categoria:
                 </p>
